@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/smkm2925/public_html/absensi
+    - export DEPLOYPATH=/home/smkm2925/public_html/presensi
     - /bin/cp -r * $DEPLOYPATH
