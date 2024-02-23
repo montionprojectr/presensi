@@ -17,7 +17,7 @@
 					</thead>
 					<tbody>
 						<?php 
-				        	$query = mysqli_query($koneksi, "select id_rombel, x.id_kelas, name_kelas, x.id_jurusan, name_jurusan, rombel, concat_ws('-', name_kelas, singkat_jurusan, rombel) as kelas from tb_kel_jur_rombel x inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan");
+				        	$query = mysqli_query($koneksi, "select id_rombel, x.id_kelas, name_kelas, x.id_jurusan, name_jurusan, rombel, concat_ws('-', name_kelas, singkat_jurusan, rombel) as kelas from tb_kel_jur_rombel x inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan inner join tb_th_pelajaran a on a.id_th_pelajaran = x.id_th_pelajaran where th_pelajaran = '".$d['format_th']."'");
 				        	$no=1;
 				        	while ($data = mysqli_fetch_array($query)) { ?>
 				        		<tr>

@@ -14,6 +14,7 @@ if (isset($_SESSION['login'])) {
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ABSENSI | SMK SAPRA1</title>
+  <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,11 +28,18 @@ if (isset($_SESSION['login'])) {
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style type="text/css">
+    .bg{
+      background-image: url("dist/img/presensi.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page bg">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index.php"><b>Absensi SMK </b>SAPRA 1 PETARUKAN</a>
+    <a href="index.php" class="text-white"><b>Absensi SMK </b>SAPRA 1 PETARUKAN</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -43,7 +51,7 @@ if (isset($_SESSION['login'])) {
           <input type="text" class="form-control" name="username" placeholder="Username" autofocus>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-user"></span>
             </div>
           </div>
         </div>

@@ -1,7 +1,3 @@
-<?php 
-$format = mysqli_query($koneksi, "select * from tb_format_th where id = '1'");
-$d = mysqli_fetch_array($format);
-?>
 <div class="row mt-3">
 	<div class="col-sm-6">
 		<div class="card">

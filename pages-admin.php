@@ -25,6 +25,8 @@ $hari = array ( 1 =>    'Senin',
 //date('N'); //Hasil 6
 $hr = $hari[ date('N') ]; // Sama seperti echo $hari[6], hasil: Sabtu
 
+$format = mysqli_query($koneksi, "select * from tb_format_th where id = '1'");
+$d = mysqli_fetch_array($format);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +36,7 @@ $hr = $hari[ date('N') ]; // Sama seperti echo $hari[6], hasil: Sabtu
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>ABSENSI | SMK SAPRA1</title>
-
+  <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->

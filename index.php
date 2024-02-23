@@ -18,7 +18,7 @@ $user = mysqli_fetch_array($query);
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>ABSENSI | SMK SAPRA1</title>
-
+  <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->

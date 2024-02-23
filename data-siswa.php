@@ -17,10 +17,7 @@
 					</thead>
 					<tbody>
 					<?php 
-					$query = mysqli_query($koneksi, "SELECT x.id_siswa, nis, nisn, name_siswa, y.id_rombel, name_kelas, singkat_jurusan, rombel FROM tb_siswa X
-INNER JOIN tb_kel_jur_rombel Y ON y.id_rombel = x.id_rombel
-INNER JOIN tb_kelas z ON z.id_kelas = y.id_kelas
-INNER JOIN tb_jurusan a ON a.id_jurusan = y.id_jurusan");
+					$query = mysqli_query($koneksi, "select x.id_siswa, nis, nisn, name_siswa, y.id_rombel, name_kelas, singkat_jurusan, rombel from tb_siswa x inner join tb_kel_jur_rombel y on y.id_rombel = x.id_rombel inner join tb_kelas z on z.id_kelas = y.id_kelas inner join tb_jurusan a on a.id_jurusan = y.id_jurusan inner join tb_th_pelajaran b on b.id_th_pelajaran = y.id_th_pelajaran where th_pelajaran = '".$d['format_th']."'");
 					while ($dt = mysqli_fetch_array($query)) { ?>
 						<tr>
 							<td><?= $dt['id_siswa'] ?></td>
