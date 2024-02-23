@@ -8,12 +8,12 @@ $sqluser = mysqli_query($koneksi, "select * from tb_user where id_user = '".$dt[
 $usr = mysqli_fetch_array($sqluser);
 
 ?>
-<form method="post">
+<form action="" method="post">
 <div class="row mt-3">
 	<div class="col-sm-6">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Edit Data Presensi</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="fas fa-edit"></i> EDIT DATA ABSENSI</h3>
 			</div>
 			<div class="card-body">
 				<div class="form-group">
@@ -33,7 +33,7 @@ $usr = mysqli_fetch_array($sqluser);
 			    <div class="form-group">
 		            <label for="nama_lengkap">Nama Guru</label>
 		            <input type="email" class="form-control form-control-sm" id="nama_lengkap" name="nama_lengkap" value="<?= $usr['nama_lengkap']; ?>" readonly>
-		            <input type="text" name="id_user" value="<?= $usr['id_user'] ?>">
+		            <input type="text" name="id_user" value="<?= $usr['id_user'] ?>" hidden>
 		        </div>
 		        <div class="form-group">
 		          <label>Nama Mapel</label>
@@ -79,8 +79,8 @@ $usr = mysqli_fetch_array($sqluser);
 	</div>
 	<div class="col-sm-6">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Edit Presensi Data Siswa</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="fas fa-edit"></i> EDIT PRESENSI DATA SISWA</h3>
 			</div>
 			<div class="card-body">
 				<table class="table table-sm table-striped table-bordered">
@@ -136,7 +136,7 @@ $usr = mysqli_fetch_array($sqluser);
 	<div class="col-sm-12">
 		<div class="form-group text-center">
 			<input type="submit" class="btn btn-success" name="simpan-edit" value="SIMPAN PERUBAHAN PRESENSI" style="width: 50%;">
-			<a href="?page=jurnal_guru_detail&id_jur=<?= $dt['id_jurnal']; ?>" class="btn btn-primary">Kembali</a>
+			<a href="?page=jurnal-kelas" class="btn btn-primary">Kembali</a>
 		</div>
 	</div>
 </div>
@@ -198,7 +198,7 @@ if (isset($_POST['simpan-edit'])) {
 		if ($query && $querya) {
 			echo "<script>
 			alert('DATA BERHASIL DISIMPAN');
-			document.location.href = 'index.php?page=jurnal_guru';
+			document.location.href = 'pages-admin.php?page=jurnal-kelas';
 			</script>";
 		}
 

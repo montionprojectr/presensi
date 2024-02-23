@@ -5,8 +5,8 @@ if (isset($_POST['id_rombel'])) {
   $id_rombel = $_POST['id_rombel'];
 ?>
 
-  <div class="card-header bg-secondary">
-    <h3 class="card-title">Data siswa /kelas</h3>
+  <div class="card-header light-blue">
+    <h3 class="card-title"><i class="fas fa-edit"></i> PRESENSI DATA SISWA</h3>
   </div>
   <div class="card-body" id="data-siswa">
     <table class="table table-sm table-striped">

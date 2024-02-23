@@ -42,6 +42,12 @@ $user = mysqli_fetch_array($query);
     .gainsboro{
       background-color: #DCDCDC;
     }
+    .azure{
+      background-color: #F0FFFF;
+    }
+    .light-blue{
+      background-color: #ADD8E6;
+    }
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -65,7 +71,7 @@ $user = mysqli_fetch_array($query);
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- <span class="dropdown-item dropdown-header">User</span>
           <div class="dropdown-divider"></div> -->
-          <a href="#" class="dropdown-item">
+          <a href="?page=guru-my-profile" class="dropdown-item">
             <i class="bi bi-person-circle mr-2"></i> My Profile
           </a>
           <div class="dropdown-divider"></div>
@@ -95,7 +101,7 @@ $user = mysqli_fetch_array($query);
           <img src="dist/img/kosong.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="?page=default" class="d-block">Name User</a>
+          <a href="?page=guru-my-profile" class="d-block"><?= $user['nama_depan']; ?></a>
         </div>
       </div>
 
@@ -139,7 +145,7 @@ $user = mysqli_fetch_array($query);
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header gainsboro">
+    <div class="content-header azure">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -174,6 +180,9 @@ $user = mysqli_fetch_array($query);
               break;
             case 'edit-jurnal':
               require_once('pages-guru-jurnal-edit.php');
+              break;
+            case 'guru-my-profile':
+              require_once('pages-guru-my-profile.php');
               break;
             // case 'proses-absensi':
             //   require_once('proses-absensi.php');

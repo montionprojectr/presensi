@@ -1,8 +1,8 @@
 <div class="row mt-3">
 	<div class="col-sm-12">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">DETAIL DATA JURNAL GURU</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="bi bi-database-exclamation"></i> DETAIL DATA JURNAL GURU</h3>
         <a href="?page=jurnal_guru" class="btn btn-primary float-right">Kembali</a>
 			</div>
 			<div class="card-body">

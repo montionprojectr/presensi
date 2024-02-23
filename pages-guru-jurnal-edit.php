@@ -5,12 +5,12 @@ $query = mysqli_query($koneksi, "select * from tb_jurnal_kelas where id_jurnal =
 $dt = mysqli_fetch_array($query);
 
 ?>
-<form method="post">
+<form action="" method="post">
 <div class="row mt-3">
 	<div class="col-sm-6">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Edit Data Presensi</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="fas fa-edit"></i> EDIT DATA ABSENSI</h3>
 			</div>
 			<div class="card-body">
 				<div class="form-group">
@@ -76,8 +76,8 @@ $dt = mysqli_fetch_array($query);
 	</div>
 	<div class="col-sm-6">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Edit Presensi Data Siswa</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="fas fa-edit"></i> EDIT PRESENSI DATA SISWA</h3>
 			</div>
 			<div class="card-body">
 				<table class="table table-sm table-striped table-bordered">

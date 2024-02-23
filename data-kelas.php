@@ -1,8 +1,8 @@
 <div class="row mt-3">
 	<div class="col-sm-12">
 		<div class="card">
-			<div class="card-header">
-				<h3 class="card-title">Data Kelas</h3>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="bi bi-database"></i> Data Kelas</h3>
 			</div>
 			<div class="card-body">
 				<table id="example1" class="table table-sm table-striped table-bordered">
