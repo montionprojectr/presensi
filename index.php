@@ -101,7 +101,7 @@ $user = mysqli_fetch_array($query);
           <img src="dist/img/kosong.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="?page=guru-my-profile" class="d-block"><?= $user['nama_depan']; ?></a>
+          <a href="?page=guru-my-profile" class="d-block"><?= $user['nama_lengkap']; ?></a>
         </div>
       </div>
 
@@ -149,7 +149,7 @@ $user = mysqli_fetch_array($query);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h5 class="m-0 text-dark">Dashboard</h5>
+            <h5 class="m-0 text-dark">Dashboard <input type="text" class="form-control form-control-sm" value="Masih dalam uji coba" readonly></h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

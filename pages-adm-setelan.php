@@ -2,7 +2,7 @@
 	<div class="col-sm-6">
 		<div class="card">
 			<div class="card-header light-blue">
-				<h3 class="card-title"><i class="fas fa-edit"></i> SETELAN</h3>
+				<h3 class="card-title"><i class="fas fa-edit"></i> SETELAN Th. Pelajaran</h3>
 			</div>
 			<div class="card-body">
 			<form action="" method="post">
@@ -30,6 +30,16 @@
 					<input type="submit" name="submit" class="btn btn-success">
 				</div>
 				</form>			
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-header light-blue">
+				<h3 class="card-title"><i class="fas fa-edit"></i> SETELAN Hak Akses User</h3>
+			</div>
+			<div class="card-body">
+				<input type="text" class="form-control form-control-sm" value="Sedang Progres" readonly>
 			</div>
 		</div>
 	</div>

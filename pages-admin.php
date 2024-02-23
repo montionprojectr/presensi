@@ -121,7 +121,7 @@ $d = mysqli_fetch_array($format);
           <img src="dist/img/kosong.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="?page=adm-my-profile" class="d-block">Name User</a>
+          <a href="?page=adm-my-profile" class="d-block">Administrator</a>
         </div>
       </div>
 
@@ -230,7 +230,7 @@ $d = mysqli_fetch_array($format);
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h5 class="m-0 text-dark">Dashboard Administrator</h5>
+            <h5 class="m-0 text-dark">Dashboard Administrator <input type="text" class="form-control form-control-sm" value="Masih dalam uji coba" readonly></h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

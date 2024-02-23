@@ -5,7 +5,7 @@
 				<h3 class="card-title"><i class="bi bi-person-fill"></i> My Profile</h3>
 			</div>
 			<div class="card-body">
-				<table class="table table-sm table-striped table-bordered">
+				<table id="example1" class="table table-sm table-striped table-bordered">
 					<thead class="card-header">
 						<tr>
 							<th>ID User</th>
