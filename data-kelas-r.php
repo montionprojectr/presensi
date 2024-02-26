@@ -4,6 +4,9 @@
 			<div class="card-header">
 			<h3 class="card-title">Detail Kelas | Data Siswa</h3>
 			</div>
+			<div class="card-header light-blue">
+				<h3 class="card-title"><a href="export-data-siswa.php?idrombel=<?= $_GET['idrm']; ?>" target="_blank" class="btn btn-success"><i class="bi bi-file-excel-fill"></i> Export to Excel</a></h3>
+			</div>
 			<div class="card-body">
 				<table id="example1" class="table table-sm table-striped table-bordered">
 					<thead>

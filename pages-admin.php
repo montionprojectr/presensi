@@ -1,6 +1,13 @@
 <?php 
 session_start();
 require_once('pages-config.php');
+// Load file autoload.php
+require 'vendor/autoload.php';
+
+// Include librari PhpSpreadsheet
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
+
 
 if (isset($_SESSION['login']) != "login") {
   header("Location: pages-login.php");
@@ -27,6 +34,8 @@ $hr = $hari[ date('N') ]; // Sama seperti echo $hari[6], hasil: Sabtu
 
 $format = mysqli_query($koneksi, "select * from tb_format_th where id = '1'");
 $d = mysqli_fetch_array($format);
+$sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajaran = '".$d['format_th']."'");
+  $th = mysqli_fetch_array($sql_th);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,6 +154,47 @@ $d = mysqli_fetch_array($format);
                 Setelan
               </p>
             </a>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                INPUTData
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="?page=input-data-kelas" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Kelas</p>
+                </a>  
+              </li>
+              <li class="nav-item">
+                <a href="?page=input-data-jurusan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Jurusan</p>
+                </a>  
+              </li> 
+              <li class="nav-item">
+                <a href="?page=input-data-mapel" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Mapel</p>
+                </a>  
+              </li> 
+              <li class="nav-item">
+                <a href="?page=input-data-guru" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Guru</p>
+                </a>  
+              </li>
+              <li class="nav-item">
+                <a href="?page=input-data-siswa" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Siswa</p>
+                </a>  
+              </li>               
+            </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
@@ -283,6 +333,21 @@ $d = mysqli_fetch_array($format);
             case 'adm-setelan':
               require_once('pages-adm-setelan.php');
               break;
+            case 'input-data-kelas':
+              require_once('input-data-kelas.php');
+              break;
+            case 'input-data-jurusan':
+              require_once('input-data-jurusan.php');
+              break;
+            case 'input-data-mapel':
+              require_once('input-data-mapel.php');
+              break;
+            case 'input-data-guru':
+              require_once('input-data-guru.php');
+              break;
+            case 'input-data-siswa':
+              require_once('input-data-siswa.php');
+              break;
             
             default:
               require_once('pages-adm-default.php');
@@ -403,5 +468,11 @@ $d = mysqli_fetch_array($format);
     });
   });
 </script>
+  <script>
+      $(document).ready(function() {
+          // Sembunyikan alert validasi kosong
+          $("#kosong").hide();
+      });
+    </script>
 </body>
 </html>

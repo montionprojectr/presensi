@@ -9,6 +9,10 @@ if (isset($_SESSION['login']) != "login") {
 
 $query = mysqli_query($koneksi, "select * from tb_user where id_user = '".$_SESSION['id_user']."'");
 $user = mysqli_fetch_array($query);
+$format = mysqli_query($koneksi, "select * from tb_format_th where id = '1'");
+$d = mysqli_fetch_array($format);
+$sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajaran = '".$d['format_th']."'");
+  $th = mysqli_fetch_array($sql_th);
 ?>
 <!DOCTYPE html>
 <html lang="en">

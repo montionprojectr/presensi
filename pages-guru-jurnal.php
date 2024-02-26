@@ -25,9 +25,13 @@
 			        	<?php 
 				          $query = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_user y on y.id_user = x.id_user inner join tb_mapel z on z.kode_mapel = x.kode_mapel where x.id_user = '".$user['id_user']."'");
 				          while ($data = mysqli_fetch_array($query)) { 
-				            $in = mysqli_query($koneksi, "select id_rombel, x.id_kelas, name_kelas, x.id_jurusan, name_jurusan, rombel, concat_ws(' - ', name_kelas, singkat_jurusan, rombel) as kelas from tb_kel_jur_rombel x inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan where id_rombel = '".$data['id_rombel']."'");
-				            $dt = mysqli_fetch_array($in);
-				            ?>
+				          	$sqlth = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_kel_jur_rombel y on y.id_rombel = x.id_rombel where x.id_rombel = '".$data['id_rombel']."'");
+				          	$resth = mysqli_fetch_array($sqlth);
+
+					          	if ($resth['id_th_pelajaran'] == $th['id_th_pelajaran']) {
+					          		$in = mysqli_query($koneksi, "select id_rombel, x.id_kelas, name_kelas, x.id_jurusan, name_jurusan, rombel, concat_ws(' - ', name_kelas, singkat_jurusan, rombel) as kelas from tb_kel_jur_rombel x inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan where id_rombel = '".$data['id_rombel']."'");
+					            	$dt = mysqli_fetch_array($in);	
+					        ?>
 				            <tr>
 				              <td><?= $data['id_jurnal']; ?></td>
 				              <td><?= $dt['kelas']; ?></td>
@@ -41,7 +45,10 @@
 				              <td><?= $data['sakit'] ?></td>
 				              <td><a href="?page=jurnal_guru_detail&id_jur=<?= $data['id_jurnal']; ?>" class="btn btn-danger">Detail</a></td>
 				            </tr>
-				          <?php }
+				          <?php }else{
+				          	echo "";
+				          }
+				      	}
 				          ?>
 			        </tbody>
 				</table>
