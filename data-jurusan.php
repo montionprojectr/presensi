@@ -12,6 +12,7 @@
 				            <th scope="col">ID Jurusan</th>
 				            <th scope="col">Name Jurusan</th>
 				            <th scope="col">Singkat Jurusan</th>
+				            <th scope="col">Option</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -24,6 +25,7 @@
 			        			<td><?= $data['id_jurusan']; ?></td>
 			        			<td><?= $data['name_jurusan']; ?></td>
 			        			<td><?= $data['singkat_jurusan']; ?></td>
+			        			<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
 			        		</tr>
 			        	<?php }
 			        	?>

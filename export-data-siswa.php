@@ -28,8 +28,8 @@ $dt = mysqli_fetch_array($query);
 
 $writer = new Xlsx($spreadsheet);
 $writer->save('tmp/data-siswa-'.$dt['kelas'].'.xlsx');
-echo "<script>window.location = 'tmp/data-siswa-".$dt['kelas'].".xlsx'</script>";
+// echo "<script>window.location = 'tmp/data-siswa-".$dt['kelas'].".xlsx'</script>";
 
-// header("location: pages-admin.php?page=r-kelas&idrm=".$_GET['idrombel']."");
+header("location: tmp/data-siswa-".$dt['kelas'].".xlsx");
  
 ?>

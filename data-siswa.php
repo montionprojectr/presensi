@@ -13,6 +13,7 @@
 							<th>NISN</th>
 							<th>Nama Lengkap</th>
 							<th>Kelas//Rombel</th>
+							<th>Option</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,6 +26,7 @@
 							<td><?= $dt['nisn'] ?></td>
 							<td><?= $dt['name_siswa'] ?></td>
 							<td><?= $dt['name_kelas']." ".$dt['singkat_jurusan']." ".$dt['rombel']; ?></td>
+							<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
 						</tr>
 					<?php }
 					?>

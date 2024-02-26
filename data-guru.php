@@ -12,7 +12,7 @@
 				            <th scope="col">NIPY</th>
 				            <th scope="col">Nama Depan</th>
 				            <th scope="col">Nama Belakang</th>
-				            <th scope="col">Detail</th>
+				            <th scope="col">Option</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -25,7 +25,7 @@
 			        			<td><?= $data['nipy']; ?></td>
 			        			<td><?= $data['nama_depan']; ?></td>
 			        			<td><?= $data['nama_lengkap']; ?></td>
-			        			<td><a href="#" class="text-primary btn btn-light"></a></td>
+			        			<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
 			        		</tr>
 			        	<?php }
 			        	?>

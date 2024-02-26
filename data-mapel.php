@@ -11,6 +11,7 @@
 							<th>ID Mapel</th>
 							<th>Kode Mapel</th>
 							<th>Nama Mapel</th>
+							<th>Option</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -21,6 +22,7 @@
 							<td><?= $dt['id_mapel']; ?></td>
 							<td><?= $dt['kode_mapel']; ?></td>
 							<td><?= $dt['name_mapel']; ?></td>
+							<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
 						</tr>
 					<?php }
 					?>
