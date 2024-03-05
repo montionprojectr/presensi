@@ -23,7 +23,7 @@
 			        </thead>
 			        <tbody>
 			        	<?php 
-				          $query = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_user y on y.id_user = x.id_user inner join tb_mapel z on z.kode_mapel = x.kode_mapel where x.id_user = '".$user['id_user']."'");
+				          $query = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_user y on y.id_user = x.id_user inner join tb_mapel z on z.kode_mapel = x.kode_mapel where x.id_user = '".$user['id_user']."' group by id_jurnal asc");
 				          while ($data = mysqli_fetch_array($query)) { 
 				          	$sqlth = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_kel_jur_rombel y on y.id_rombel = x.id_rombel where x.id_rombel = '".$data['id_rombel']."'");
 				          	$resth = mysqli_fetch_array($sqlth);
