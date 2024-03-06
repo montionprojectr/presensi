@@ -36,7 +36,7 @@ if (isset($_GET['id_siswa'])) {
 						<label for="nama_depan">ROMBEL /ID ROMBEL</label>
 						<select class="form-control form-control-sm select2" name="id_rombel">
 							<?php 
-							$rom = mysqli_query($koneksi, "SELECT id_th_pelajaran, x.id_rombel, CONCAT_WS('-', name_kelas, singkat_jurusan, rombel) AS kelas FROM tb_kel_jur_rombel X INNER JOIN tb_kelas Y ON y.id_kelas = x.id_kelas INNER JOIN tb_jurusan z ON z.id_jurusan = x.id_jurusan where id_th_pelajaran = '".$th['id_th_pelajaran']."'");
+							$rom = mysqli_query($koneksi, "select id_th_pelajaran, x.id_rombel, concat_ws('-', name_kelas, singkat_jurusan, rombel) as kelas from tb_kel_jur_rombel x inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan where id_th_pelajaran = '".$th['id_th_pelajaran']."'");
 							while ($dt = mysqli_fetch_array($rom)) {
 								if ($dt['id_rombel'] == $res['id_rombel']) {
 									$select = 'selected';
