@@ -44,7 +44,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>ABSENSI | SMK SAPRA1</title>
+  <title>PRESENSI KELAS | SMK SAPRA1</title>
   <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -252,12 +252,12 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
                   <p>Jurnal Kelas</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="?page=jurnal-guru" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jurnal Guru</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a href="?page=jurnal-siswa" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -347,6 +347,18 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
               break;
             case 'input-data-siswa':
               require_once('input-data-siswa.php');
+              break;
+            case 'edit-guru':
+              require_once('edit-guru.php');
+              break;
+            case 'edit-jurusan':
+              require_once('edit-jurusan.php');
+              break;
+            case 'edit-mapel':
+              require_once('edit-mapel.php');
+              break;
+            case 'edit-siswa':
+              require_once('edit-siswa.php');
               break;
             
             default:

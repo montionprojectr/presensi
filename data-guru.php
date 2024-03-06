@@ -27,7 +27,7 @@
 			        			<td><?= $data['nipy']; ?></td>
 			        			<td><?= $data['nama_depan']; ?></td>
 			        			<td><?= $data['nama_lengkap']; ?></td>
-			        			<td><a href="?page=data-guru&edit=<?= $data['id_user']; ?>" class="btn btn-tool">Edit</a> || <a href="?page=data-guru&hapus=<?= $data['id_user']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus akun <?= $data['nama_lengkap']; ?> ini ?')">Hapus</a></td>
+			        			<td><a href="?page=edit-guru&id_user=<?= $data['id_user']; ?>" class="btn btn-tool">Edit</a> || <a href="?page=data-guru&hapus=<?= $data['id_user']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus akun <?= $data['nama_lengkap']; ?> ini ?')">Hapus</a></td>
 			        		</tr>
 			        	<?php }
 			        	?>
@@ -38,14 +38,7 @@
 	</div>
 </div>
 <?php 
-if (isset($_GET['edit'])) {
-	$id_user = $_GET['edit'];
-
-	echo "<script>
-	alert('Data Berhasil diedit');
-	document.location.href = '?page=data-guru';
-	</script>";
-}else if(isset($_GET['hapus'])){
+if(isset($_GET['hapus'])){
 	$id_user = $_GET['hapus'];
 
 	$sql = mysqli_query($koneksi, "delete from tb_user where id_user = '".$id_user."'");

@@ -3,7 +3,7 @@
 		<form action="" method="post">
 		<div class="card">
 			<div class="card-header">
-				<h3 class="card-title">ANDA BERADA PADA TAMPILAH Th. PELAJARAN : <?= $d['format_th']; ?></h3>
+				<h3 class="card-title">ANDA BERADA PADA TAMPILAN Th. PELAJARAN : <?= $d['format_th']; ?></h3>
 			</div>
 			<div class="card-header light-blue">
 				<h3 class="card-title"><i class="fas fa-edit"></i> INPUTData Kelas</h3>

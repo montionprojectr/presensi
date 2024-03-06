@@ -29,3 +29,22 @@
 		</div>
 	</div>
 </div>
+<?php 
+if (isset($_POST['simpan-data'])) {
+	$name_mapel = $_POST['name_mapel'];
+	$kode_mapel = $_POST['kode_mapel'];
+
+	$sql = mysqli_query($koneksi, "insert into tb_mapel(id_mapel, name_mapel, kode_mapel) values('','".$name_mapel."','".$kode_mapel."')");
+	if ($sql) {
+		echo "<script>
+		alert('Data Berhasil disimpan');
+		document.location.href = '?page=data-mapel';
+		</script>";
+	}else{
+		echo "<script>
+		alert('Data Gagal disimpan');
+		document.location.href = '?page=input-data-mapel';
+		</script>";
+	}
+}
+?>

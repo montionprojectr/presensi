@@ -13,7 +13,7 @@ if (isset($_SESSION['login'])) {
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>ABSENSI | SMK SAPRA1</title>
+  <title>PRESENSI KELAS | SMK SAPRA1</title>
   <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,8 +30,9 @@ if (isset($_SESSION['login'])) {
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style type="text/css">
     .bg{
-      background-image: url("dist/img/presensi.jpg");
+      background-image: url('dist/img/gerbangsapra1.jpeg');
       background-repeat: no-repeat;
+      background-attachment: fixed;
       background-size: cover;
     }
   </style>
@@ -39,7 +40,8 @@ if (isset($_SESSION['login'])) {
 <body class="hold-transition login-page bg">
 <div class="login-box">
   <div class="login-logo">
-    <a href="index.php" class="text-white"><b>Absensi SMK </b>SAPRA 1 PETARUKAN</a>
+    <img src="dist/img/logo_sapra1.png" alt="AdminLTE Logo" style="opacity: .7" height="130px" width="130px"><br>
+    <a href="index.php" class="text-white"><b>Presensi Kelas </b>SMK</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -74,7 +76,7 @@ if (isset($_SESSION['login'])) {
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" name="login" class="btn btn-primary btn-block">Sign In</button>
+            <button type="submit" name="login" class="btn btn-primary btn-block"><i class="fas fa-sign-in-alt"></i> Log In</button>
           </div>
           <!-- /.col -->
         </div>

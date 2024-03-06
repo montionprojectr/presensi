@@ -22,7 +22,7 @@
 							<td><?= $dt['id_mapel']; ?></td>
 							<td><?= $dt['kode_mapel']; ?></td>
 							<td><?= $dt['name_mapel']; ?></td>
-							<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
+							<td><a href="?page=edit-mapel&id_mapel=<?= $dt['id_mapel']; ?>" class="btn btn-tool">Edit</a> || <a href="?page=data-mapel&hapus=<?= $dt['id_mapel']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus mapel <?= $dt['name_mapel']; ?> ini ?')">Hapus</a></td>
 						</tr>
 					<?php }
 					?>
@@ -32,3 +32,22 @@
 		</div>
 	</div>
 </div>
+<?php 
+if(isset($_GET['hapus'])){
+	$id_mapel = $_GET['hapus'];
+
+	$sql = mysqli_query($koneksi, "delete from tb_mapel where id_mapel = '".$id_mapel."'");
+
+	if ($sql) {
+		echo "<script>
+		alert('Data berhasil dihapus');
+		document.location.href = '?page=data-mapel';
+		</script>";
+	}else{
+		echo "<script>
+		alert('Data gagal dihapus');
+		document.location.href = '?page=data-mapel';
+		</script>";
+	}
+}
+?>

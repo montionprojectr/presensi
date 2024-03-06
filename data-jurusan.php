@@ -25,7 +25,7 @@
 			        			<td><?= $data['id_jurusan']; ?></td>
 			        			<td><?= $data['name_jurusan']; ?></td>
 			        			<td><?= $data['singkat_jurusan']; ?></td>
-			        			<td><a href="?page=edit" class="btn btn-tool">Edit</a> || <a href="?page=data-jurusan&hapus=<?= $data['id_jurusan']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus jurusan <?= $data['name_jurusan']; ?> ini ?')">Hapus</a></td>
+			        			<td><a href="?page=edit-jurusan&id_jurusan=<?= $data['id_jurusan'] ?>" class="btn btn-tool">Edit</a> || <a href="?page=data-jurusan&hapus=<?= $data['id_jurusan']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus jurusan <?= $data['name_jurusan']; ?> ini ?')">Hapus</a></td>
 			        		</tr>
 			        	<?php }
 			        	?>
@@ -36,9 +36,7 @@
 	</div>
 </div>
 <?php 
-if (isset($_GET['edit'])) {
-	
-}else if(isset($_GET['hapus'])){
+if(isset($_GET['hapus'])){
 	$id_jurusan = $_GET['hapus'];
 
 	$sql = mysqli_query($koneksi, "delete from tb_jurusan where id_jurusan = '".$id_jurusan."'");

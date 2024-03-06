@@ -21,7 +21,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>ABSENSI | SMK SAPRA1</title>
+  <title>PRESENSI KELAS | SMK SAPRA1</title>
   <link rel="icon" href="dist/img/logo_sapra1.png" type="image/x-icon">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">

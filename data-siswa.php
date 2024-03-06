@@ -12,7 +12,7 @@
 							<th>Nis</th>
 							<th>NISN</th>
 							<th>Nama Lengkap</th>
-							<th>Kelas//Rombel</th>
+							<th>Kelas | Rombel</th>
 							<th>Option</th>
 						</tr>
 					</thead>
@@ -26,7 +26,7 @@
 							<td><?= $dt['nisn'] ?></td>
 							<td><?= $dt['name_siswa'] ?></td>
 							<td><?= $dt['name_kelas']." ".$dt['singkat_jurusan']." ".$dt['rombel']; ?></td>
-							<td><a href="" class="btn btn-tool">Edit</a> || <a href="" class="btn text-danger">Hapus</a></td>
+							<td><a href="?page=edit-siswa&id_siswa=<?= $dt['id_siswa']; ?>" class="btn btn-tool">Edit</a> || <a href="?page=data-siswa&hapus=<?= $dt['id_siswa']; ?>" class="btn text-danger" onclick="return confirm('Anda yakin mau menghapus siswa atas nama : <?= $dt['name_siswa']; ?> ini ?')">Hapus</a></td>
 						</tr>
 					<?php }
 					?>
@@ -36,3 +36,22 @@
 		</div>
 	</div>
 </div>
+<?php 
+if(isset($_GET['hapus'])){
+	$id_siswa = $_GET['hapus'];
+
+	$sql = mysqli_query($koneksi, "delete from tb_siswa where id_siswa = '".$id_siswa."'");
+
+	if ($sql) {
+		echo "<script>
+		alert('Data berhasil dihapus');
+		document.location.href = '?page=data-siswa';
+		</script>";
+	}else{
+		echo "<script>
+		alert('Data gagal dihapus');
+		document.location.href = '?page=data-siswa';
+		</script>";
+	}
+}
+?>
