@@ -5,11 +5,11 @@ if (isset($_GET['id_siswa'])) {
 	$sql = mysqli_query($koneksi, "select * from tb_siswa where id_siswa = '".$id_siswa."'");
 	$res = mysqli_fetch_array($sql);
 
-	$sqlf = mysqli_query($koneksi, "select * from tb_format_th");
-	$f = mysqli_fetch_array($sqlf);
+	// $sqlf = mysqli_query($koneksi, "select * from tb_format_th");
+	// $f = mysqli_fetch_array($sqlf);
 
-	$sqlth = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajaran = '".$f['format_th']."'");
-	$th = mysqli_fetch_array($sqlth);
+	// $sqlth = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajaran = '".$f['format_th']."'");
+	// $th = mysqli_fetch_array($sqlth);
 ?>
 <div class="row">
 	<div class="col-sm-12">

@@ -360,6 +360,9 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
             case 'edit-siswa':
               require_once('edit-siswa.php');
               break;
+            case 'adm-edit-jurnal-kelas':
+              require_once('pages-adm-jurnal-kelas-detail-edit.php');
+              break;
             
             default:
               require_once('pages-adm-default.php');
