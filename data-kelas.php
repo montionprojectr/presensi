@@ -5,7 +5,7 @@
 				<h3 class="card-title"><i class="bi bi-database"></i> Data Kelas</h3>
 			</div>
 			<div class="card-body">
-				<table id="example1" class="table table-sm table-striped table-bordered">
+				<table class="table table-sm table-striped">
 					<thead>
 						<tr>
 							<th scope="col">No</th>

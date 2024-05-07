@@ -7,7 +7,7 @@
 			</div>
 			<div class="card-body">
 				<div class="form-group">
-          <label>Kelas / Rombel</label>
+          <label>Kelas / Rombel :</label>
           <select class="form-control-sm select2" style="width: 100%;" id="select-kelas" name="id_rombel">
             <option selected="selected">--Pilih Data Kelas--</option>
             <?php 
@@ -22,12 +22,12 @@
           </select>
         </div>
         <div class="form-group">
-            <label for="nama_lengkap">Nama Guru</label>
+            <label for="nama_lengkap">Nama Guru :</label>
             <input type="email" class="form-control form-control-sm" id="nama_lengkap" name="nama_lengkap" value="<?= $user['nama_lengkap']; ?>" readonly>
             <input type="text" name="id_user" value="<?= $user['id_user'] ?>" hidden>
         </div>
         <div class="form-group">
-          <label>Nama Mapel</label>
+          <label>Nama Mapel :</label>
           <select class="form-control-sm select2" style="width: 100%;" name="kode_mapel" required>
             <option selected="selected">--Pilih Data Mapel--</option>
             <?php 
@@ -43,13 +43,14 @@
         </div>
         <div class="row form-group">
         	<div class="col-sm-4">
-        	<label for="hari_dantgl">Hari & Tgl</label>
+        	<label for="hari_dantgl">Hari & Tgl :</label>
         	<input type="date" class="form-control form-control-sm" name="hari_dantgl" required>		
         	</div>
         </div>
          <div class="row mb-3">
-          <label for="inputText" class="col-sm-2 col-form-label">Waktu Kehadiran</label>
-          <div class="col-sm-4">
+          <label for="inputText" class="col-sm-2 col-form-label">Waktu Kehadiran :</label>
+          <label class="col-form-label">(AM: 12Malam - 11:59Siang & PM: 12:00Siang - 11:59Malam )</label>
+          <div class="col-sm-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Mulai</span>
               <input type="time" class="form-control" name="time_mulai" aria-describedby="basic-addon1" required>

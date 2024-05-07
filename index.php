@@ -153,7 +153,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h5 class="m-0 text-dark">Dashboard <input type="text" class="form-control form-control-sm" value="Masih dalam uji coba" readonly></h5>
+            <h5 class="m-0 text-dark">Dashboard</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

@@ -280,7 +280,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h5 class="m-0 text-dark">Dashboard Administrator <input type="text" class="form-control form-control-sm" value="Masih dalam uji coba" readonly></h5>
+            <h5 class="m-0 text-dark">Dashboard Administrator</h5>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -325,7 +325,10 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
               require_once('pages-adm-jurnal-kelas.php');
               break;
             case 'jurnal-siswa':
-              require_once('pages-jurnal-siswa.php');
+              require_once('pages-adm-jurnal-siswa.php');
+              break;
+            case 'report-jurnal-siswa':
+              require_once('pages-adm-report-jurnal-siswa.php');
               break;
             case 'adm_jurnal_kelas_detail':
               require_once('pages-adm-jurnal-kelas-detail.php');

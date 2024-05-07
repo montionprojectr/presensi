@@ -38,6 +38,7 @@ if (isset($_POST['simpan_presensi'])) {
 
 		$count = count($_POST['id_siswa']);
 		
+		//mengambil absensi di setiap jam pelajaran
 		for ($i=0; $i < $count; $i++) { 
 			// $kehadiran = $Radios[$i];
 			$querya = mysqli_query($koneksi, "insert into tb_jurnal_siswa(id_jurnal_siswa, id_jurnal, id_siswa, kehadiran) values('','".$kode."','".$id_siswa[$i]."','".$kehadiran[$i]."')");
@@ -73,14 +74,29 @@ if (isset($_POST['simpan_presensi'])) {
 			$sakit = 0;
 		}
 
-		//insert tb_jurnal_kelas
+		//mengambil data absensi dan diinsert ke table tb_jurnal_kelas
 		$query = mysqli_query($koneksi, "insert into tb_jurnal_kelas(id_jurnal, id_rombel, id_user, kode_mapel, hari_dantgl, time_mulai, time_akhir, hadir, alpa, ijin, sakit, jumlah) values('".$kode."','".$id_rombel."','".$id_user."','".$kode_mapel."','".$hari_dantgl."','".$time_mulai."','".$time_akhir."','".$hadir."','".$alpa."','".$ijin."','".$sakit."','".$count."')");
 
-		if ($query && $querya) {
+		//mengambil absensi dijam pertama saja
+		if ($time_mulai == '07:00') {
+			for ($j=0; $j < $count; $j++) {
+			$queryb = mysqli_query($koneksi, "insert into tb_jurnal_harian(id_jurnal_harian, id_jurnal, id_siswa, hari_dantgl, time_mulai, kehadiran) values('','".$kode."','".$id_siswa[$j]."','".$hari_dantgl."','".$time_mulai."','".$kehadiran[$j]."')");
+			}
+
+			if ($query && $querya && $queryb) {
 			echo "<script>
 			alert('DATA BERHASIL DISIMPAN');
 			document.location.href = 'index.php?page=jurnal_guru';
 			</script>";
+			}
+
+		}else{
+			if ($query && $querya) {
+			echo "<script>
+			alert('DATA BERHASIL DISIMPAN');
+			document.location.href = 'index.php?page=jurnal_guru';
+			</script>";
+			}
 		}
 	
 	}
