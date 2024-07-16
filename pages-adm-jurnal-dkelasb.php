@@ -21,8 +21,7 @@ $id_th_pelajaran = $_POST['id_th_pelajaran'];
     <th>Alpa</th>
     <th>Ijin</th>
     <th>Sakit</th>
-    <th>Jumlah</th>   
-    <th>Option</th> 
+    <th>Jumlah</th>
   </tr>
 </thead>
 <tbody>
@@ -38,11 +37,49 @@ while ($data = mysqli_fetch_array($query)) { ?>
 		<td><?= $data['hari_dantgl']; ?></td>
 		<td><?= $data['wkt_kehadiran']; ?></td>
 		<td><?= $data['hadir']; ?></td>
-		<td><?= $data['alpa']; ?></td>
-		<td><?= $data['ijin']; ?></td>
-		<td><?= $data['sakit']; ?></td> 
+		<td>
+			<ol class="list-group list-group-numbered">
+        <?php 
+        $sqlalp = mysqli_query($koneksi, "select * from tb_jurnal_siswa x inner join tb_siswa y on y.id_siswa = x.id_siswa where id_jurnal = '".$data['id_jurnal']."'"); 
+        while ($alpa = mysqli_fetch_array($sqlalp)) {
+          if ($alpa['kehadiran'] == 'alpa') {
+           echo "<li>".$alpa['name_siswa']."</li>"; 
+          }else{
+            echo "";
+          }
+        }
+        ?>
+        </ol>
+		</td>
+		<td>
+			<ol class="list-group list-group-numbered">
+        <?php 
+        $sqlijn = mysqli_query($koneksi, "select * from tb_jurnal_siswa x inner join tb_siswa y on y.id_siswa = x.id_siswa where id_jurnal = '".$data['id_jurnal']."'"); 
+        while ($ijin = mysqli_fetch_array($sqlijn)) {
+          if ($ijin['kehadiran'] == 'ijin') {
+           echo "<li>".$ijin['name_siswa'].", </li>"; 
+          }else{
+            echo "";
+          }
+        }
+        ?>
+        </ol>
+		</td>
+		<td>
+			<ol class="list-group list-group-numbered">
+        <?php 
+        $sqlskt = mysqli_query($koneksi, "select * from tb_jurnal_siswa x inner join tb_siswa y on y.id_siswa = x.id_siswa where id_jurnal = '".$data['id_jurnal']."'"); 
+        while ($sakit = mysqli_fetch_array($sqlskt)) {
+          if ($sakit['kehadiran'] == 'sakit') {
+           echo "<li>".$sakit['name_siswa']."</li>"; 
+          }else{
+            echo "";
+          }
+        }
+        ?>
+        </ol>
+		</td> 
 		<td><?= $data['jumlah']; ?></td> 
-		<td><a href="?page=adm_jurnal_kelas_detail&id_jurnal=<?= $data['id_jurnal']; ?>" class="btn btn-danger">Detail</a></td>  
 	</tr>
 <?php }
 ?>

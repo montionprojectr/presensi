@@ -331,9 +331,6 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
             case 'report-jurnal-siswa':
               require_once('pages-adm-report-jurnal-siswa.php');
               break;
-            case 'adm_jurnal_kelas_detail':
-              require_once('pages-adm-jurnal-kelas-detail.php');
-              break;
             case 'adm-setelan':
               require_once('pages-adm-setelan.php');
               break;

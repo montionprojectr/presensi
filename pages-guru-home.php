@@ -49,7 +49,7 @@
         </div>
          <div class="row mb-3">
           <label for="inputText" class="col-sm-2 col-form-label">Waktu Kehadiran :</label>
-          <label class="col-form-label">(AM: 12Malam - 11:59Siang & PM: 12:00Siang - 11:59Malam )</label>
+          <label class="col-form-label">(Penting <i class="fa fa-arrow-right"></i> AM: 12Malam - 11:59Siang & PM: 12:00Siang - 11:59Malam )</label>
           <div class="col-sm-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Mulai</span>

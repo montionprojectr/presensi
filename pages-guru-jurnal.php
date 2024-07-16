@@ -8,6 +8,7 @@
 				<table id="example1" class="table tabl-sm table-striped table-bordered">
 					<thead>
 			          <tr>
+			          	<th>No</th>
 			            <th>ID Jurnal</th>
 			            <th>Rombel</th>
 			            <th>Kode Mapel</th>
@@ -24,6 +25,7 @@
 			        <tbody>
 			        	<?php 
 				          $query = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_user y on y.id_user = x.id_user inner join tb_mapel z on z.kode_mapel = x.kode_mapel where x.id_user = '".$user['id_user']."' group by id_jurnal asc");
+				          $no=1;
 				          while ($data = mysqli_fetch_array($query)) { 
 				          	$sqlth = mysqli_query($koneksi, "select * from tb_jurnal_kelas x inner join tb_kel_jur_rombel y on y.id_rombel = x.id_rombel where x.id_rombel = '".$data['id_rombel']."'");
 				          	$resth = mysqli_fetch_array($sqlth);
@@ -33,6 +35,7 @@
 					            	$dt = mysqli_fetch_array($in);	
 					        ?>
 				            <tr>
+				            	<td><?= $no++; ?></td>
 				              <td><?= $data['id_jurnal']; ?></td>
 				              <td><?= $dt['kelas']; ?></td>
 				              <td><?= $data['kode_mapel'] ?></td>
