@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Bulan Mei 2024 pada 09.42
+-- Waktu pembuatan: 16 Jul 2024 pada 08.55
 -- Versi server: 10.4.11-MariaDB
 -- Versi PHP: 7.4.3
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_absensi_sp1`
+-- Database: `db_absensi`
 --
 
 -- --------------------------------------------------------
@@ -59,7 +59,7 @@ CREATE TABLE `tb_generet_tgl` (
 --
 
 INSERT INTO `tb_generet_tgl` (`id_generet`, `tgl_awal`, `tgl_akhir`, `waktu_proses`, `id_rombel`) VALUES
-(15, '2024-05-01', '2024-05-08', '2024-05-07 01:05:55', 5);
+(21, '2024-05-01', '2024-05-20', '2024-07-16 12:07:06', 5);
 
 -- --------------------------------------------------------
 
@@ -1459,6 +1459,28 @@ INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nipy`, `nama_depan`, 
 (101, '31220210144', '31220210144', '31220210144', 'Failsal', 'Faisal Dwi Prasetyo'),
 (103, 'admin12', 'admin12', '12', 'admin12', 'admin12');
 
+-- --------------------------------------------------------
+
+--
+-- Stand-in struktur untuk tampilan `view_tablekelas`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `view_tablekelas` (
+`id_rombel` int(10)
+,`name_kelas` varchar(3)
+,`singkat_jurusan` varchar(10)
+,`rombel` varchar(4)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `view_tablekelas`
+--
+DROP TABLE IF EXISTS `view_tablekelas`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `view_tablekelas`  AS  (select `x`.`id_rombel` AS `id_rombel`,`y`.`name_kelas` AS `name_kelas`,`z`.`singkat_jurusan` AS `singkat_jurusan`,`x`.`rombel` AS `rombel` from ((`tb_kel_jur_rombel` `x` join `tb_kelas` `y` on(`y`.`id_kelas` = `x`.`id_kelas`)) join `tb_jurusan` `z` on(`z`.`id_jurusan` = `x`.`id_jurusan`)) group by `x`.`id_rombel`) ;
+
 --
 -- Indexes for dumped tables
 --
@@ -1573,7 +1595,7 @@ ALTER TABLE `tb_format_th`
 -- AUTO_INCREMENT untuk tabel `tb_generet_tgl`
 --
 ALTER TABLE `tb_generet_tgl`
-  MODIFY `id_generet` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_generet` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_jurnal_harian`
