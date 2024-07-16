@@ -27,7 +27,8 @@
 </head>
 <body>
 <?php 
-require_once('../pages-config.php');
+// $koneksi = mysqli_connect("localhost","root","","db_absensi");
+$koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
 
 if (isset($_GET['id_rombel'])) {
 	$id = $_GET['id_rombel'];
