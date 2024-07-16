@@ -61,7 +61,6 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
   <!-- DataTables -->
   <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
   <style type="text/css">
     .lemonchiff{
       background-color: #FFFACD;
@@ -493,7 +492,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
           $("#kosong").hide();
       });
     </script>
-
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 <script>
     $("button").click(function(){
       $("#mtable").table2excel();
