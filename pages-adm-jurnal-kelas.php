@@ -36,6 +36,7 @@
 					</div>
 					<div class="col-sm-3">
 						<input type="date" name="date" id="date_day" class="form-control form-control-sm">
+						<button id="table"><i class="fa fas-excel"></i> Excel</button>
 					</div>
 					<div class="col-sm-12">
 						<div id="data-jurnal" class="mt-3">
