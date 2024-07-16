@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>Report</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.table2excel.js"></script>
 	<style type="text/css">
 	body{
 		font-family: sans-serif;
@@ -27,8 +29,8 @@
 </head>
 <body>
 <?php 
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=report.xls");
+// header("Content-type: application/vnd-ms-excel");
+// header("Content-Disposition: attachment; filename=report.xls");
 
 // $koneksi = mysqli_connect("localhost","root","","db_absensi");
 $koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
@@ -72,7 +74,7 @@ if (isset($_GET['id_rombel'])) {
 	<div class="col-sm-12">
 		<div class="card">
 			<div class="card-header light-blue">
-				<h2 class="card-title">Report Jurnal Siswa Kelas <?= $data['name_kelas']." ".$data['singkat_jurusan']." ".$data['rombel']; ?> </h2>
+				<h2 class="card-title">Report Jurnal Siswa Kelas <?= $data['name_kelas']." ".$data['singkat_jurusan']." ".$data['rombel']; ?> <button>Export Excel</button></h2>
 			</div>
 			<div class="card-body">
 				<table class="table table-sm table-striped">
@@ -161,5 +163,11 @@ count(if(kehadiran = 'sakit', kehadiran, null)) as sakit from tb_jurnal_harian x
 <?php 
 }
 ?>
+
+<script>
+    $("button").click(function(){
+      $("#myTable").table2excel();
+    });
+</script>
 </body>
 </html>
