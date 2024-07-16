@@ -384,8 +384,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2024-2025 <a href="https://github.com/montionprojectr" target="_blank">Montionprojectr</a>.</strong>
-    All rights reserved.
+    <strong>Support by : <a href="https://smksatyapraja2.id" target="_blank">SMK SATYA PRAJA 2</a>.</strong>
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 0.0.1
     </div>
