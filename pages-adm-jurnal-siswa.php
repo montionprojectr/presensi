@@ -29,7 +29,7 @@
 									<td><?= $no++; ?></td>
 									<td><?= $dt['tgl_awal']."/".$dt['tgl_akhir']; ?></td>
 									<td><?php 
-									$sq = mysqli_query($koneksi, "select * from view_tbkelas where id_rombel = '".$dt['id_rombel']."'");
+									$sq = mysqli_query($koneksi, "select * from view_tablekelas where id_rombel = '".$dt['id_rombel']."'");
 									$q =mysqli_fetch_object($sq);
 									echo $q->name_kelas." ".$q->singkat_jurusan." ".$q->rombel;
 								?></td>

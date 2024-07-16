@@ -27,7 +27,7 @@
 </head>
 <body>
 <?php 
-$koneksi = mysqli_connect("localhost","root","","db_absensi_sp1");
+require_once('../pages-config.php');
 
 if (isset($_GET['id_rombel'])) {
 	$id = $_GET['id_rombel'];
