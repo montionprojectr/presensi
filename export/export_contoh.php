@@ -79,12 +79,12 @@ if (isset($_GET['id_rombel'])) {
 				<h2 class="card-title">Report Jurnal Siswa Kelas <?= $data['name_kelas']." ".$data['singkat_jurusan']." ".$data['rombel']; ?> <button>Export Excel</button></h2>
 			</div>
 			<div class="card-body">
-				<table class="table2excel" class="table2excel" id="myTable" border="1">
+				<table class="table2excel" id="myTable" border="1">
 					<thead>
 						<tr>
-							<th rowspan="2">No</th>
-							<th rowspan="2">NIS</th>
-							<th rowspan="2">Nama</th>
+							<th>No</th>
+							<th>NIS</th>
+							<th>Nama</th>
 							<?php
 							foreach ($period as $key => $value) {
 								$val[] = array();
@@ -95,13 +95,10 @@ if (isset($_GET['id_rombel'])) {
 							    echo "</th>";     
 							}
 							?>
-							<th colspan="4">Total</th>
-						</tr>
-						<tr>
-							<th>H</th>
-							<th>A</th>
-							<th>I</th>
-							<th>S</th>
+							<th>Total Hadir</th>
+							<th>Total Alpa</th>
+							<th>Total Ijin</th>
+							<th>Total Sakit</th>
 						</tr>
 					</thead>
 					<tbody>
