@@ -157,48 +157,7 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                INPUTData
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="?page=input-data-kelas" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Data Kelas</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a href="?page=input-data-jurusan" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Data Jurusan</p>
-                </a>  
-              </li> 
-              <li class="nav-item">
-                <a href="?page=input-data-mapel" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Data Mapel</p>
-                </a>  
-              </li> 
-              <li class="nav-item">
-                <a href="?page=input-data-guru" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Data Guru</p>
-                </a>  
-              </li>
-              <li class="nav-item">
-                <a href="?page=input-data-siswa" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Input Data Siswa</p>
-                </a>  
-              </li>               
-            </ul>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fas fa-database"></i>
               <p>
                 MASTERData
                 <i class="fas fa-angle-left right"></i>
@@ -235,6 +194,48 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
                   <p>Data Siswa</p>
                 </a>
               </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <!-- <i class="nav-icon fas fa-copy"></i> -->
+              <i class="nav-icon fas fa-pen"></i>
+              <p>
+                INPUTData
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="?page=input-data-kelas" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Kelas</p>
+                </a>  
+              </li>
+              <li class="nav-item">
+                <a href="?page=input-data-jurusan" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Jurusan</p>
+                </a>  
+              </li> 
+              <li class="nav-item">
+                <a href="?page=input-data-mapel" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Mapel</p>
+                </a>  
+              </li> 
+              <li class="nav-item">
+                <a href="?page=input-data-guru" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Guru</p>
+                </a>  
+              </li>
+              <li class="nav-item">
+                <a href="?page=input-data-siswa" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Input Data Siswa</p>
+                </a>  
+              </li>               
             </ul>
           </li>
           <li class="nav-item has-treeview">
