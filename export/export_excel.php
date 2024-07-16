@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Export Data Ke Excel Dengan PHP - www.malasngoding.com</title>
-</head>
-<body>
+	<title>Report</title>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.table2excel.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 	<style type="text/css">
 	body{
 		font-family: sans-serif;
@@ -26,83 +28,145 @@
 		border-radius: 2px;
 	}
 	</style>
- 
-	<?php
-	header("Content-type: application/vnd-ms-excel");
-	header("Content-Disposition: attachment; filename=Data Pegawai.xls");
-	?>
- 
-	<center>
-		<h1>Export Data Ke Excel Dengan PHP <br/> www.malasngoding.com</h1>
-	</center>
- 
-	<table border="1">
-		<tr>
-			<th>No</th>
-			<th>Nama Pegawai</th>
-			<th>Alamat</th>
-			<th>No.Telp</th>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td>Sulaiman</td>
-			<td>Jakarta</td>
-			<td>0829121223</td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td>Diki Alfarabi Hadi</td>
-			<td>Jakarta</td>
-			<td>08291212211</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>Zakaria</td>
-			<td>Medan</td>
-			<td>0829121223</td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td>Alvinur</td>
-			<td>Jakarta</td>
-			<td>02133324344</td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td>Muhammad Rizani</td>
-			<td>Jakarta</td>
-			<td>08231111223</td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td>Rizaldi Waloni</td>
-			<td>Jakarta</td>
-			<td>027373733</td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td>Ferdian</td>
-			<td>Jakarta</td>
-			<td>0829121223</td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td>Fatimah</td>
-			<td>Jakarta</td>
-			<td>23432423423</td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td>Aminah</td>
-			<td>Jakarta</td>
-			<td>0829234233</td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td>Jafarudin</td>
-			<td>Jakarta</td>
-			<td>0829239323</td>
-		</tr>
-	</table>
+</head>
+<body>
+<?php 
+// header("Content-type: application/vnd-ms-excel");
+// header("Content-Disposition: attachment; filename=report.xls");
+
+// $koneksi = mysqli_connect("localhost","root","","db_absensi");
+$koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
+
+if (isset($_GET['id_rombel'])) {
+	$id = $_GET['id_rombel'];
+	$idg = $_GET['id_generet'];
+
+	$sql = mysqli_query($koneksi, "select id_rombel, y.id_th_pelajaran, th_pelajaran, name_kelas, singkat_jurusan, rombel from tb_kelas x inner join tb_kel_jur_rombel y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = y.id_jurusan inner join tb_th_pelajaran w on w.id_th_pelajaran = y.id_th_pelajaran where id_rombel = '".$id."'");
+	$data= mysqli_fetch_array($sql);
+	$sqlg = mysqli_query($koneksi, "select * from tb_generet_tgl where id_generet = '".$idg."'");
+	$dg = mysqli_fetch_array($sqlg);
+	
+	date_default_timezone_set('Asia/Jakarta');
+	// echo date('D, Y-m-d H:i:s');
+
+	$daftar_hari = array(
+	 'Sunday' => 'Minggu',
+	 'Monday' => 'Senin',
+	 'Tuesday' => 'Selasa',
+	 'Wednesday' => 'Rabu',
+	 'Thursday' => 'Kamis',
+	 'Friday' => 'Jumat',
+	 'Saturday' => 'Sabtu'
+	);
+	// $date="2012/05/03";
+	// $namahari = date('l', strtotime($date));
+
+	// echo $daftar_hari[$namahari];
+	$tawal = $dg['tgl_awal'];
+	$takhir = $dg['tgl_akhir'];
+	//code start
+	$period = new DatePeriod(
+	     new DateTime($tawal),
+	     new DateInterval('P1D'),
+	     new DateTime($takhir)
+	);
+
+?>
+<div class="row mt-2">
+	<div class="col-sm-12">
+		<div class="card">
+			<div class="card-header light-blue">
+				<h2 class="card-title">Report Jurnal Siswa Kelas <?= $data['name_kelas']." ".$data['singkat_jurusan']." ".$data['rombel']; ?> <button>Export Excel</button></h2>
+			</div>
+			<div class="card-body">
+				<table class="table2excel" id="myTable" border="1">
+					<thead>
+						<tr>
+							<th>No</th>
+							<th>NIS</th>
+							<th>Nama</th>
+							<?php
+							foreach ($period as $key => $value) {
+								$val[] = array();
+								echo "<th class='text-sm' rowspan='2'>";
+							    $hari = $value->format('Y-m-d');
+							    $date = date('l', strtotime($hari));
+							    echo $daftar_hari[$date].", ".$hari;
+							    echo "</th>";     
+							}
+							?>
+							<th>Total Hadir</th>
+							<th>Total Alpa</th>
+							<th>Total Ijin</th>
+							<th>Total Sakit</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php 
+						
+						$no=1;
+						$sqls = mysqli_query($koneksi, "select id_siswa, nis, nisn, name_siswa, w.id_rombel, concat_ws('-', name_kelas, singkat_jurusan, rombel) as kelas from tb_siswa w inner join tb_kel_jur_rombel x on x.id_rombel = w.id_rombel inner join tb_kelas y on y.id_kelas = x.id_kelas inner join tb_jurusan z on z.id_jurusan = x.id_jurusan where w.id_rombel ='".$id."'");
+						while ($data = mysqli_fetch_array($sqls)) { ?>
+							<tr>
+								<td><?= $no++; ?></td>
+								<td><?= $data['nis']; ?></td>
+								<td><?= $data['name_siswa']; ?></td>
+								<?php 
+								foreach ($period as $k => $v) {
+									$h = $v->format('Y-m-d');
+									?>
+									<td>
+										<?php 
+										$sqli = mysqli_query($koneksi, "select * from tb_jurnal_harian x inner join tb_siswa y on y.id_siswa = x.id_siswa where x.id_siswa = '".$data['id_siswa']."' and id_rombel = '".$data['id_rombel']."'");
+										while ($ds = mysqli_fetch_array($sqli)) {
+											if ($data['id_siswa'] == $ds['id_siswa']) {
+												if ($h == $ds['hari_dantgl']) {
+													if ($ds['kehadiran'] == 'hadir') {
+														echo 'H';
+
+													}else if($ds['kehadiran'] == 'alpa'){
+														echo "A";
+													}else if ($ds['kehadiran'] == 'ijin') {
+														echo "I";
+													}else if ($ds['kehadiran'] == 'sakit') {
+														echo "S";
+													}
+												}else{
+													echo "";
+												}
+											}
+										}
+										?>
+									</td>
+								<?php }
+
+								$sqt = mysqli_query($koneksi, "select count(if(kehadiran = 'hadir', kehadiran, null)) as hadir, 
+count(if(kehadiran = 'alpa', kehadiran, null)) as alpa,
+count(if(kehadiran = 'ijin', kehadiran, null)) as ijin,
+count(if(kehadiran = 'sakit', kehadiran, null)) as sakit from tb_jurnal_harian x inner join tb_siswa y on y.id_siswa = x.id_siswa where x.id_siswa = '".$data['id_siswa']."' and id_rombel = '".$data['id_rombel']."'");
+								$t = mysqli_fetch_object($sqt);
+								?>
+								<td><?= $t->hadir; ?></td>
+								<td><?= $t->alpa; ?></td>
+								<td><?= $t->ijin; ?></td>
+								<td><?= $t->sakit; ?></td>
+							</tr>
+						<?php }
+						?>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<?php 
+}
+?>
+
+<script>
+    $("button").click(function(){
+      $("#myTable").table2excel();
+    });
+</script>
 </body>
 </html>

@@ -34,7 +34,7 @@
 									echo $q->name_kelas." ".$q->singkat_jurusan." ".$q->rombel;
 								?></td>
 									<td><?= $dt['waktu_proses']; ?></td>
-									<td><a href="export/export_contoh.php?id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn btn-success" target="_blank"><i class="fa fa-file-excel"></i> Excel</a> || <a href="?page=report-jurnal-siswa&id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn light-blue">View <i class="fa fa-eye"></i></a> || <a href="?page=jurnal-siswa&delete=<?= $dt['id_generet']; ?>" class="btn btn-danger" onclick="return confirm('Yakin mau di Hapus?')">X</a></td>
+									<td><a href="export/export_excel.php?id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn btn-success" target="_blank"><i class="fa fa-file-excel"></i> Excel</a> || <a href="?page=report-jurnal-siswa&id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn light-blue">View <i class="fa fa-eye"></i></a> || <a href="?page=jurnal-siswa&delete=<?= $dt['id_generet']; ?>" class="btn btn-danger" onclick="return confirm('Yakin mau di Hapus?')">X</a></td>
 								</tr>
 							<?php }
 							?>
