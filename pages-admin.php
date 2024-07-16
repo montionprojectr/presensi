@@ -492,11 +492,14 @@ $sql_th = mysqli_query($koneksi, "select * from tb_th_pelajaran where th_pelajar
           $("#kosong").hide();
       });
     </script>
+
+<!-- script untuk file pages-adm-jurnal-kelas.php -->
 <script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 <script>
     $("button").click(function(){
       $("#mtable").table2excel();
     });
 </script>
+<!-- /script untuk file pages-adm-jurnal-kelas.php -->
 </body>
 </html>

@@ -38,7 +38,7 @@
 						<input type="date" name="date" id="date_day" class="form-control form-control-sm">
 					</div>
 					<div class="col-sm-12">
-						<button class="btn btn-success mb-2"><i class="fa fa-file-excel"></i> Excel</button>
+						<button class="btn btn-success m-2 col-sm-12"><i class="fa fa-file-excel"></i> Excel</button>
 					</div>
 					<div class="col-sm-12">
 						<div id="data-jurnal" class="mt-3">
