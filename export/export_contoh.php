@@ -1,4 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Report</title>
+	<style type="text/css">
+	body{
+		font-family: sans-serif;
+	}
+	table{
+		margin: 20px auto;
+		border-collapse: collapse;
+	}
+	table th,
+	table td{
+		border: 1px solid #3c3c3c;
+		padding: 3px 8px;
+ 
+	}
+	a{
+		background: blue;
+		color: #fff;
+		padding: 8px 10px;
+		text-decoration: none;
+		border-radius: 2px;
+	}
+	</style>
+</head>
+<body>
 <?php 
+$koneksi = mysqli_connect("localhost","root","","db_absensi_sp1");
+
 if (isset($_GET['id_rombel'])) {
 	$id = $_GET['id_rombel'];
 	$idg = $_GET['id_generet'];
@@ -32,6 +62,10 @@ if (isset($_GET['id_rombel'])) {
 	     new DateInterval('P1D'),
 	     new DateTime($takhir)
 	);
+
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=report.xls");
+
 ?>
 <div class="row mt-2">
 	<div class="col-sm-12">
@@ -56,7 +90,7 @@ if (isset($_GET['id_rombel'])) {
 							    echo "</th>";     
 							}
 							?>
-							<th colspan="3">Total</th>
+							<th colspan="4">Total</th>
 						</tr>
 						<tr>
 							<th>H</th>
@@ -126,3 +160,5 @@ count(if(kehadiran = 'sakit', kehadiran, null)) as sakit from tb_jurnal_harian x
 <?php 
 }
 ?>
+</body>
+</html>

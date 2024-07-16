@@ -1,0 +1,21 @@
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/smkm2925/public_html/presensi/pages-config.php on line 3
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/smkm2925/public_html/presensi/index.php on line 10
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/smkm2925/public_html/presensi/index.php on line 11
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/smkm2925/public_html/presensi/index.php on line 12
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/smkm2925/public_html/presensi/index.php on line 13
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/smkm2925/public_html/presensi/index.php on line 14
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/smkm2925/public_html/presensi/index.php on line 15
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/smkm2925/public_html/presensi/pages-guru-home.php on line 14
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/smkm2925/public_html/presensi/pages-guru-home.php on line 16
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, bool given in /home/smkm2925/public_html/presensi/pages-guru-home.php on line 34
+[05-Mar-2024 12:42:18 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/smkm2925/public_html/presensi/pages-guru-home.php on line 36
+[06-Mar-2024 13:11:23 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/smkm2925/public_html/presensi/pages-config.php on line 3
+[06-Mar-2024 13:12:44 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/smkm2925/public_html/presensi/edit-siswa.php on line 40
+[06-Mar-2024 13:13:02 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/smkm2925/public_html/presensi/edit-siswa.php on line 40
+[06-Mar-2024 13:14:21 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/smkm2925/public_html/presensi/edit-siswa.php on line 40
+[06-May-2024 08:14:53 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/smkm2925/public_html/presensi/pages-config.php on line 3
+[06-May-2024 08:14:53 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/smkm2925/public_html/presensi/pages-config.php:9) in /home/smkm2925/public_html/presensi/pages-admin.php on line 13
+[06-May-2024 09:04:16 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/smkm2925/public_html/presensi/pages-config.php on line 3
+[07-May-2024 14:43:36 Asia/Jakarta] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/smkm2925/public_html/presensi/pages-config.php on line 3
+[07-May-2024 14:43:36 Asia/Jakarta] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/smkm2925/public_html/presensi/pages-config.php:9) in /home/smkm2925/public_html/presensi/index.php on line 6
+[07-May-2024 14:45:09 Asia/Jakarta] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/smkm2925/public_html/presensi/pages-adm-jurnal-siswa.php on line 27

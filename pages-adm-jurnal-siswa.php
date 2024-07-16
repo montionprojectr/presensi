@@ -23,14 +23,18 @@
 						<tbody>
 							<?php 
 							$no=1;
-							$sql = mysqli_query($koneksi, "select * from tb_generet_tgl");
+							$sql = mysqli_query($koneksi, "select * from tb_generet_tgl group by id_generet desc");
 							while ($dt = mysqli_fetch_array($sql)) { ?>
 								<tr>
 									<td><?= $no++; ?></td>
 									<td><?= $dt['tgl_awal']."/".$dt['tgl_akhir']; ?></td>
-									<td><?= $dt['id_rombel']; ?></td>
+									<td><?php 
+									$sq = mysqli_query($koneksi, "select * from view_tbkelas where id_rombel = '".$dt['id_rombel']."'");
+									$q =mysqli_fetch_object($sq);
+									echo $q->name_kelas." ".$q->singkat_jurusan." ".$q->rombel;
+								?></td>
 									<td><?= $dt['waktu_proses']; ?></td>
-									<td><a href="?page=report-jurnal-siswa&id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn light-blue">Cetak</a> <a href="?page=jurnal-siswa&delete=<?= $dt['id_generet']; ?>" class="btn btn-danger">X</a></td>
+									<td><a href="export/export_contoh.php?id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn btn-success" target="_blank"><i class="fa fa-file-excel"></i> Excel</a> || <a href="?page=report-jurnal-siswa&id_rombel=<?= $dt['id_rombel']; ?>&id_generet=<?= $dt['id_generet']; ?>" class="btn light-blue">View <i class="fa fa-eye"></i></a> || <a href="?page=jurnal-siswa&delete=<?= $dt['id_generet']; ?>" class="btn btn-danger" onclick="return confirm('Yakin mau di Hapus?')">X</a></td>
 								</tr>
 							<?php }
 							?>
