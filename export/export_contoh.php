@@ -27,6 +27,9 @@
 </head>
 <body>
 <?php 
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=report.xls");
+
 // $koneksi = mysqli_connect("localhost","root","","db_absensi");
 $koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
 
@@ -63,9 +66,6 @@ if (isset($_GET['id_rombel'])) {
 	     new DateInterval('P1D'),
 	     new DateTime($takhir)
 	);
-
-header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=report.xls");
 
 ?>
 <div class="row mt-2">
