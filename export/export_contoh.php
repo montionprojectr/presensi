@@ -2,8 +2,10 @@
 <html>
 <head>
 	<title>Report</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/jquery.table2excel.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery.table2excel.js"></script> -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js"></script>
 	<style type="text/css">
 	body{
 		font-family: sans-serif;
@@ -77,7 +79,7 @@ if (isset($_GET['id_rombel'])) {
 				<h2 class="card-title">Report Jurnal Siswa Kelas <?= $data['name_kelas']." ".$data['singkat_jurusan']." ".$data['rombel']; ?> <button>Export Excel</button></h2>
 			</div>
 			<div class="card-body">
-				<table class="table table-sm table-striped">
+				<table class="table table-sm table-striped" id="myTable">
 					<thead>
 						<tr>
 							<th rowspan="2">No</th>
