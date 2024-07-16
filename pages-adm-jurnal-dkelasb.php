@@ -5,7 +5,7 @@ $id_rombel = $_POST['id_rombel'];
 $date_day = $_POST['date_day'];
 $id_th_pelajaran = $_POST['id_th_pelajaran'];
 ?>
-<button id="table" class="mb-2"><i class="fa fas-excel"></i> Excel</button>
+<button id="mtable" class="btn btn-success mb-2"><i class="fa fa-file-excel"></i> Excel</button>
 
 <table class="table table-sm table-striped table-bordered">
 <thead>
