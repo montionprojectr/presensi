@@ -36,7 +36,10 @@ if (isset($_GET['id_jurusan'])) {
 		$name_jurusan = $_POST['name_jurusan'];
 		$singkat_jurusan = $_POST['singkat_jurusan'];
 
-		$up = mysqli_query($koneksi, "update tb_jurusan set name_jurusan = '".$name_jurusan."', singkat_jurusan = '".$singkat_jurusan."' where id_jurusan = '".$id_jurusan."'");
+		$name = strtoupper($name_jurusan);
+		$singkat = strtoupper($singkat_jurusan);
+
+		$up = mysqli_query($koneksi, "update tb_jurusan set name_jurusan = '".$name."', singkat_jurusan = '".$singkat."' where id_jurusan = '".$id_jurusan."'");
 
 		if ($up){
 			echo "<script>

@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Report</title>
+	  <link rel="icon" href="../dist/img/logo_sapra1.png" type="image/x-icon">
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/jquery.table2excel.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -34,8 +35,8 @@
 // header("Content-type: application/vnd-ms-excel");
 // header("Content-Disposition: attachment; filename=report.xls");
 
-// $koneksi = mysqli_connect("localhost","root","","db_absensi");
-$koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
+$koneksi = mysqli_connect("localhost","root","","db_absensi");
+// $koneksi = mysqli_connect("localhost","smkm2925_absensi","absensi123456789","smkm2925_presensi");
 
 if (isset($_GET['id_rombel'])) {
 	$id = $_GET['id_rombel'];

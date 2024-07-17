@@ -34,7 +34,10 @@ if (isset($_POST['simpan-data'])) {
 	$name_jurusan = $_POST['name_jurusan'];
 	$singkat_jurusan = $_POST['singkat_jurusan'];
 
-	$sql = mysqli_query($koneksi, "insert into tb_jurusan(id_jurusan, name_jurusan, singkat_jurusan) values('','".$name_jurusan."','".$singkat_jurusan."')");
+	$name = strtoupper($name_jurusan);
+	$singkat = strtoupper($singkat_jurusan);
+
+	$sql = mysqli_query($koneksi, "insert into tb_jurusan(id_jurusan, name_jurusan, singkat_jurusan) values('','".$name."','".$singkat."')");
 	if ($sql) {
 		echo "<script>
 		alert('Data berhasil disimpan');
